@@ -2,6 +2,13 @@
 
 Elasticsearch docker image with Chinese support
 
-## Plugins
+## Images
+
+```shell
+# elasticsearch 6.4.2
+docker pull nexushubs/elasticsearch-cn:6.4.2
+```
+
+## Installed Plugins
 
 * [analysis-smartcn](https://github.com/elastic/elasticsearch/tree/master/plugins/analysis-smartcn/)
