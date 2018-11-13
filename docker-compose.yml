@@ -10,10 +10,13 @@ services:
     volumes:
       - 'es_data:/usr/share/elasticsearch/data'
       - './config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml'
+      - './config/analysis-ik/IKAnalyzer.cfg.xml:/usr/share/elasticsearch/config/analysis-ik/IKAnalyzer.cfg.xml'
+      - './config/analysis-ik/custom:/usr/share/elasticsearch/config/analysis-ik/custom'
     healthcheck:
       test: curl https://localhost:9200 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
       interval: 30s
       timeout: 10s
       retries: 5
+    restart: always
 volumes:
   es_data:
